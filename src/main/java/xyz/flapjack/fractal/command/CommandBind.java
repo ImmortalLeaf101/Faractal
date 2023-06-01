@@ -1,6 +1,7 @@
 package xyz.flapjack.fractal.command;
 
 /* Custom. */
+import xyz.flapjack.fractal.bridge.impl.Chat;
 import xyz.flapjack.fractal.modules.Module;
 import xyz.flapjack.Access;
 
@@ -14,13 +15,23 @@ public class CommandBind extends Command {
 
     @Override
     public void handle(String[] args) {
-        for (Codes code: Codes.values()) {
-            if (code.character.equalsIgnoreCase(args[0])) {
-                Module module = Access.Instance.getModule("Click GUI");
+        if (args[0] == null) {
+            return;
+        }
 
-                module.keyBind = code.key;
-                module.displayBind = code.character;
+        try {
+            for (Codes code: Codes.values()) {
+                if (code.character.equalsIgnoreCase(args[0])) {
+                    Module module = Access.Instance.getModule("Click GUI");
+
+                    module.keyBind = code.key;
+                    module.displayBind = code.character;
+
+                    Chat.sendChatMessage("Re-binded!");
+                }
             }
+        } catch (Exception ignored) {
+            Chat.sendChatMessage("Invalid argument.");
         }
     }
 

@@ -380,7 +380,7 @@ public class ClickGui extends GuiScreen {
      */
     private void drawWatermark() {
         String watermark = (String) Access.Instance.getModule("Click GUI").getVal("Click GUI watermark");
-        Access.Instance.getInstance().getFontManager().getFontRenderer("Montserrat 14").drawDependantString(watermark + " - FractalClient v1.0", this.scaledResolution.getScaledWidth() - 3, 5, new Color(255, 255, 255, Math.round(255 * this.guiAlpha)).getRGB());
+        Access.Instance.getInstance().getFontManager().getFontRenderer("Montserrat 14").drawDependantString(watermark + " - FractalClient v1.1", this.scaledResolution.getScaledWidth() - 3, 5, new Color(255, 255, 255, Math.round(255 * this.guiAlpha)).getRGB());
     }
 
     /**
