@@ -1,6 +1,7 @@
 package xyz.flapjack.fractal.keyboard;
 
 /* Custom. */
+import xyz.flapjack.fractal.bridge.impl.Chat;
 import xyz.flapjack.fractal.interfaces.clickgui.ClickGui;
 import xyz.flapjack.fractal.events.impl.KeyboardEvent;
 import xyz.flapjack.fractal.modules.Module;

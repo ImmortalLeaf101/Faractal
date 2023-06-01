@@ -7,11 +7,13 @@ import xyz.flapjack.fractal.keyboard.KeyboardManager;
 import xyz.flapjack.fractal.events.impl.RenderEvent;
 import xyz.flapjack.fractal.render.font.FontManager;
 import xyz.flapjack.fractal.modules.ModuleManager;
+import xyz.flapjack.fractal.command.CommandBind;
 import xyz.flapjack.fractal.bridge.impl.Chat;
 import xyz.flapjack.Access;
 
 /* Weave. */
 import net.weavemc.loader.api.event.SubscribeEvent;
+import net.weavemc.loader.api.command.CommandBus;
 import net.weavemc.loader.api.event.EventBus;
 import net.weavemc.loader.api.ModInitializer;
 
@@ -38,6 +40,7 @@ public class Fractal extends Access implements ModInitializer {
     public void preInit() {
         INSTANCE = this;
 
+        CommandBus.register(new CommandBind());
         EventBus.subscribe(this);
 
         try {

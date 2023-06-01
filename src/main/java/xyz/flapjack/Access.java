@@ -87,7 +87,7 @@ public class Access {
      * Client control.
      */
     public static final class Client {
-        public static String version = "1.0";
+        public static String version = "1.1";
 
         public static boolean debugger = false;
         public static boolean enabled = true;

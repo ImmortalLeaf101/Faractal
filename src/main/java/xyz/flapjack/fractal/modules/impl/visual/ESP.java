@@ -50,7 +50,7 @@ public class ESP extends Module {
             return;
         }
 
-        if (event.entity == this.mcInstance.thePlayer || !(event.entity instanceof EntityPlayer)) {
+        if (!(event.entity instanceof EntityPlayer)) {
             return;
         }
 

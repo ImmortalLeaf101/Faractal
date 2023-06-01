@@ -1,6 +1,7 @@
 package xyz.flapjack.fractal.events.mixin;
 
 /* Custom. */
+import xyz.flapjack.fractal.bridge.impl.Chat;
 import xyz.flapjack.fractal.modules.impl.util.Random;
 import xyz.flapjack.fractal.events.impl.RenderEvent;
 import xyz.flapjack.fractal.events.impl.MouseEvent;
@@ -148,6 +149,8 @@ public class MixinEntityRenderer {
         double d1 = d0;
         Vec3 vec3 = entity.getPositionEyes(f1);
 
+        MovingObjectPosition mouseOver = this.mc.objectMouseOver;
+
         boolean flag = false;
         if(this.mc.playerController.extendedReach()) {
             d0 = 6.0D;
@@ -170,7 +173,11 @@ public class MixinEntityRenderer {
         List<Entity> list = this.mc.theWorld.getEntitiesInAABBexcluding(entity, entity.getEntityBoundingBox().addCoord(vec31.xCoord * d0, vec31.yCoord * d0, vec31.zCoord * d0).expand(f, f, f), Predicates.and(EntitySelectors.NOT_SPECTATING, filter -> filter != null && filter.canBeCollidedWith()));
         double d2 = d1;
 
-        for (Entity entity1 : list) {
+        if (list.isEmpty() && d0 > 3.0D) {
+            flag = true;
+        }
+
+        for (Entity entity1: list) {
             float hitboxExpand = entity1.getCollisionBorderSize();
 
             if (module.enabled && (boolean) module.getVal("Hitbox")) {
