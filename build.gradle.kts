@@ -49,6 +49,4 @@ tasks.jar {
      * destinationDirectory.set(file("${System.getProperty("user.home")}/.lunarclient/mods"))
      *
      */
-
-    destinationDirectory.set(file("${System.getProperty("user.home")}/.lunarclient/mods"))
 }
