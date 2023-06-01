@@ -15,6 +15,14 @@ public class CommandBind extends Command {
 
     @Override
     public void handle(String[] args) {
+        if (args == null) {
+            return;
+        }
+
+        if (args.length == 0) {
+            return;
+        }
+
         if (args[0] == null) {
             return;
         }
