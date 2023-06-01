@@ -98,7 +98,7 @@ public class InputComponent extends UIComponent {
             return;
         }
 
-        String heuristic = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!\"'|£$%^&*()-=: ";
+        String heuristic = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!\"'|£$%^&*()-=:<>/ ";
 
         if (key == 14) {
             if (this.value.length() > 0) {
